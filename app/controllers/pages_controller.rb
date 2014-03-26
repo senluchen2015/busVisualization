@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
   def index
-  end
+  	@buses=Cta.find(:all);
+  end	
 end
