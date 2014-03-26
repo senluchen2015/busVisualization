@@ -2,21 +2,18 @@
 <html>
 	<title>Chicago Bus Visualization</title>
 	<head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js">
-		</script>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZp9sTR_-Qv0g5ctQ758raHKdhLRL_FJM&sensor=false&libraries=visualization">
-    </script>
-    <script>
-
-
-    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   	</head>
   <body>
+  	<div class="panel">
+  	<h1>CTA - Ridership <br> Data Visualization</h1>
+		Boardings <input type="checkbox" id="boardings" value="boardings">
+		Alightings <input type="checkbox" id="alightings" value="alightings">
+		<button onclick="loadScript('boardings')">Create Map</button>
+	</div>
     <div id="map-canvas"/> 
 	</div>
 
-	<button onclick="loadScript()">map</button>
 
  	<%= content_tag :div, class: "bus_data", data: {buses: @buses} do %>
 	<% end %>
