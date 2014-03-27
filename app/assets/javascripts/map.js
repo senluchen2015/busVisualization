@@ -1,27 +1,36 @@
-var map;
-var busList;
-var heatMapData= new Array();
-var heatMapDataAlight= new Array();
+
 
 function initialize() {
 	//initalize map
+	var heatMapData= new Array();
+	var heatMapDataAlight= new Array();
+	var map;
+	var busList;
+
 	var mapOptions = {
-          center: new google.maps.LatLng(41.87632184, -87.77410482),
+          center: new google.maps.LatLng(41.8337329,-87.7321555),
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.SATELLITE
         	};
     var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
+    var checkedRoutes = getCheckedBoxes();
 
 	$(function(){
 		busList = $('.bus_data').data('buses');
+
+		
 		if(document.getElementById("boardings").checked && document.getElementById("alightings").checked){
+			var counter=0;
 			for (var i=0;i<busList.length;i++){
-				var location = busList[i].location;
-				location = location.replace('(','');
-				location = location.replace(')','');
-				location = location.split(',');	
-				heatMapData[i]  = {location: new google.maps.LatLng(location[0],location[1]), weight:busList[i].boardings+busList[i].alightings};
+				if(contains(checkedRoutes, busList[i].routes)==true){
+					var location = busList[i].location;
+					location = location.replace('(','');
+					location = location.replace(')','');
+					location = location.split(',');	
+					heatMapData[counter]  = {location: new google.maps.LatLng(location[0],location[1]), weight:busList[i].boardings+busList[i].alightings};
+					counter++;
+				}
 			}
 
 			var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -49,12 +58,16 @@ function initialize() {
 		    heatmap.set('gradient',gradient);
 			}
 		else if(document.getElementById("boardings").checked){
+				var counter=0;
 				for (var i=0;i<busList.length;i++){
-				var location = busList[i].location;
-				location = location.replace('(','');
-				location = location.replace(')','');
-				location = location.split(',');	
-				heatMapData[i]  = {location: new google.maps.LatLng(location[0],location[1]), weight:busList[i].boardings};
+					if(contains(checkedRoutes, busList[i].routes)==true){
+						var location = busList[i].location;
+						location = location.replace('(','');
+						location = location.replace(')','');
+						location = location.split(',');	
+						heatMapData[counter]  = {location: new google.maps.LatLng(location[0],location[1]), weight:busList[i].boardings};
+						counter++;
+					}
 			}
 
 			var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -64,12 +77,16 @@ function initialize() {
 			heatmap.setMap(map);	
 		}
 		else if(document.getElementById("alightings").checked){
+				var counter =0;
 				for (var i=0;i<busList.length;i++){
-				var location = busList[i].location;
-				location = location.replace('(','');
-				location = location.replace(')','');
-				location = location.split(',');	
-				heatMapDataAlight[i]  = {location: new google.maps.LatLng(location[0],location[1]), weight:busList[i].alightings};
+					if(contains(checkedRoutes, busList[i].routes)==true){
+						var location = busList[i].location;
+						location = location.replace('(','');
+						location = location.replace(')','');
+						location = location.split(',');	
+						heatMapDataAlight[counter]  = {location: new google.maps.LatLng(location[0],location[1]), weight:busList[i].alightings};
+						counter++;
+				}
 			}
 
 			var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -85,7 +102,33 @@ function initialize() {
 }
 // google.maps.event.addDomListener(window, 'load', initialize);
 
+function getCheckedBoxes(){
+	var checkedBoxes=[];
+	var routes = document.getElementById("routes");
+	for(var i=0;i<routes.length;i++){
+		if(routes[i].checked){
+			checkedBoxes.push(Number(routes[i].value));
+		}
+	}
+	return  checkedBoxes;
+}
 
+function contains(array, object) {
+    var i = array.length;
+    while (i--) {
+       if (array[i] === object) {
+           return true;
+       }
+    }
+    return false;
+}
+
+function toggle(source) {
+  checkboxes = document.getElementsByName('routes');
+  for(var i=0, n=checkboxes.length;i<n;i++) {
+    checkboxes[i].checked = source.checked;
+  }
+}
 
 function loadScript() {
   var script = document.createElement('script');

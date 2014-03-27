@@ -10,9 +10,149 @@
 		Boardings <input type="checkbox" id="boardings" value="boardings">
 		Alightings <input type="checkbox" id="alightings" value="alightings">
 		<button onclick="loadScript('boardings')">Create Map</button>
+	
+		<form id="routes">
+			Routes<br>
+			All <input type="checkbox" onclick="toggle(this)"><br>
+			1	<input name="routes" type="checkbox" value='1'  >
+			2	<input name="routes" type="checkbox" value='2'  >
+			3	<input name="routes" type="checkbox" value='3'  >
+			4	<input name="routes" type="checkbox" value='4'  >
+			N5	<input name="routes" type="checkbox" value='N5' >
+			6	<input name="routes" type="checkbox" value='6'  >
+			7	<input name="routes" type="checkbox" value='7'  >
+			8	<input name="routes" type="checkbox" value='8'  > <br>
+			8A	<input name="routes" type="checkbox" value='8A' >
+			9	<input name="routes" type="checkbox" value='9'  >
+			10	<input name="routes" type="checkbox" value='10' >
+			11	<input name="routes" type="checkbox" value='11' >
+			12	<input name="routes" type="checkbox" value='12' >
+			J14	<input name="routes" type="checkbox" value='J14'>
+			15	<input name="routes" type="checkbox" value='15' > <br>
+			18	<input name="routes" type="checkbox" value='18' >
+			19	<input name="routes" type="checkbox" value='19' >
+			20	<input name="routes" type="checkbox" value='20' >
+			21	<input name="routes" type="checkbox" value='21' >
+			22	<input name="routes" type="checkbox" value='22' >
+			24	<input name="routes" type="checkbox" value='24' >
+			26	<input name="routes" type="checkbox" value='26' ><br>
+			28	<input name="routes" type="checkbox" value='28' >
+			29	<input name="routes" type="checkbox" value='29' >
+			30	<input name="routes" type="checkbox" value='30' >
+			34	<input name="routes" type="checkbox" value='34' >
+			35	<input name="routes" type="checkbox" value='35' >
+			36	<input name="routes" type="checkbox" value='36' >
+			37	<input name="routes" type="checkbox" value='37' ><br>
+			39	<input name="routes" type="checkbox" value='39' >
+			43	<input name="routes" type="checkbox" value='43' >
+			44	<input name="routes" type="checkbox" value='44' >
+			47	<input name="routes" type="checkbox" value='47' >
+			48	<input name="routes" type="checkbox" value='48' >
+			49	<input name="routes" type="checkbox" value='49' >
+			49B	<input name="routes" type="checkbox" value='49B'><br>
+			50	<input name="routes" type="checkbox" value='50' >
+			51	<input name="routes" type="checkbox" value='51' >
+			52	<input name="routes" type="checkbox" value='52' >
+			52A	<input name="routes" type="checkbox" value='52A'>
+			53	<input name="routes" type="checkbox" value='53' >
+			53A	<input name="routes" type="checkbox" value='53A'>
+			54	<input name="routes" type="checkbox" value='54' >
+			54A	<input name="routes" type="checkbox" value='54A'>
+			54B	<input name="routes" type="checkbox" value='54B'>
+			55	<input name="routes" type="checkbox" value='55' >
+			55A	<input name="routes" type="checkbox" value='55A'>
+			55N	<input name="routes" type="checkbox" value='55N'>
+			56	<input name="routes" type="checkbox" value='56' ><br>
+			57	<input name="routes" type="checkbox" value='57' >
+			59	<input name="routes" type="checkbox" value='59' >
+			60	<input name="routes" type="checkbox" value='60' >
+			62	<input name="routes" type="checkbox" value='62' >
+			62H	<input name="routes" type="checkbox" value='62H'>
+			63	<input name="routes" type="checkbox" value='63' >
+			63W	<input name="routes" type="checkbox" value='63W'>
+			65	<input name="routes" type="checkbox" value='65' >
+			66	<input name="routes" type="checkbox" value='66' >
+			67	<input name="routes" type="checkbox" value='67' >
+			68	<input name="routes" type="checkbox" value='68' >
+			70	<input name="routes" type="checkbox" value='70' >
+			71	<input name="routes" type="checkbox" value='71' >
+			72	<input name="routes" type="checkbox" value='72' ><br>
+			73	<input name="routes" type="checkbox" value='73' >
+			74	<input name="routes" type="checkbox" value='74' >
+			75	<input name="routes" type="checkbox" value='75' >
+			76	<input name="routes" type="checkbox" value='76' >
+			77	<input name="routes" type="checkbox" value='77' >
+			78	<input name="routes" type="checkbox" value='78' >
+			79	<input name="routes" type="checkbox" value='79' ><br>
+			80	<input name="routes" type="checkbox" value='80' >
+			81	<input name="routes" type="checkbox" value='81' >
+			81W	<input name="routes" type="checkbox" value='81W'>
+			82	<input name="routes" type="checkbox" value='82' >
+			84	<input name="routes" type="checkbox" value='84' >
+			85	<input name="routes" type="checkbox" value='85' ><br>
+			85A	<input name="routes" type="checkbox" value='85A'>
+			86	<input name="routes" type="checkbox" value='86' >
+			87	<input name="routes" type="checkbox" value='87' >
+			88	<input name="routes" type="checkbox" value='88' >
+			90	<input name="routes" type="checkbox" value='90' >
+			91	<input name="routes" type="checkbox" value='91' >
+			92	<input name="routes" type="checkbox" value='92' ><br>
+			93	<input name="routes" type="checkbox" value='93' >
+			94	<input name="routes" type="checkbox" value='94' >
+			95W	<input name="routes" type="checkbox" value='95W'>
+			95E	<input name="routes" type="checkbox" value='95E'>
+			96	<input name="routes" type="checkbox" value='96' >
+			97	<input name="routes" type="checkbox" value='97' ><br>	
+			X98	<input name="routes" type="checkbox" value='X98'>
+			100	<input name="routes" type="checkbox" value='100'>
+			103	<input name="routes" type="checkbox" value='103'>
+			106	<input name="routes" type="checkbox" value='106'>
+			108	<input name="routes" type="checkbox" value='108'>
+			111	<input name="routes" type="checkbox" value='111'>
+			111	<input name="routes" type="checkbox" value='111'>
+			112	<input name="routes" type="checkbox" value='112'>
+			115	<input name="routes" type="checkbox" value='115'>
+			119	<input name="routes" type="checkbox" value='119'>
+			120	<input name="routes" type="checkbox" value='120'>
+			121	<input name="routes" type="checkbox" value='121'>
+			124	<input name="routes" type="checkbox" value='124'>
+			125	<input name="routes" type="checkbox" value='125'>
+			126	<input name="routes" type="checkbox" value='126'>
+			128	<input name="routes" type="checkbox" value='128'>
+			130	<input name="routes" type="checkbox" value='130'>
+			132	<input name="routes" type="checkbox" value='132'>
+			134	<input name="routes" type="checkbox" value='134'>
+			135	<input name="routes" type="checkbox" value='135'>
+			136	<input name="routes" type="checkbox" value='136'>
+			143	<input name="routes" type="checkbox" value='143'>
+			146	<input name="routes" type="checkbox" value='146'>
+			147	<input name="routes" type="checkbox" value='147'>
+			148	<input name="routes" type="checkbox" value='148'>
+			151	<input name="routes" type="checkbox" value='151'>
+			152	<input name="routes" type="checkbox" value='152'>
+			155	<input name="routes" type="checkbox" value='155'>
+			156	<input name="routes" type="checkbox" value='156'>
+			157	<input name="routes" type="checkbox" value='157'>
+			165	<input name="routes" type="checkbox" value='165'>
+			169	<input name="routes" type="checkbox" value='169'>
+			170	<input name="routes" type="checkbox" value='170'>
+			171	<input name="routes" type="checkbox" value='171'>
+			172	<input name="routes" type="checkbox" value='172'>
+			192	<input name="routes" type="checkbox" value='192'>
+			201	<input name="routes" type="checkbox" value='201'>
+			205	<input name="routes" type="checkbox" value='205'>
+			206	<input name="routes" type="checkbox" value='206'>
+		</form>
+
+
 	</div>
+    
+
     <div id="map-canvas"/> 
 	</div>
+
+
+
 
 
  	<%= content_tag :div, class: "bus_data", data: {buses: @buses} do %>
