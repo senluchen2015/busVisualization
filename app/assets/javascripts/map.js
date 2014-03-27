@@ -1,5 +1,4 @@
 
-
 function initialize() {
 	//initalize map
 	var heatMapData= new Array();
@@ -7,6 +6,7 @@ function initialize() {
 	var map;
 	var busList;
 
+	//create the map
 	var mapOptions = {
           center: new google.maps.LatLng(41.8337329,-87.7321555),
           zoom: 11,
@@ -17,14 +17,16 @@ function initialize() {
     var checkedRoutes = getCheckedBoxes();
 
 	$(function(){
-		busList = $('.bus_data').data('buses');
-
 		
+		busList = $('.bus_data').data('buses'); //stores all the data 
+
+		//check if cases of boardings and alightings boxes
 		if(document.getElementById("boardings").checked && document.getElementById("alightings").checked){
 			var counter=0;
 			for (var i=0;i<busList.length;i++){
 				if(contains(checkedRoutes, busList[i].routes)==true){
-					var location = busList[i].location;
+					//parse the location
+					var location = busList[i].location;  
 					location = location.replace('(','');
 					location = location.replace(')','');
 					location = location.split(',');	
@@ -100,8 +102,8 @@ function initialize() {
 		}
 	});	
 }
-// google.maps.event.addDomListener(window, 'load', initialize);
 
+//function to check the checkboxes 
 function getCheckedBoxes(){
 	var checkedBoxes=[];
 	var routes = document.getElementById("routes");
@@ -113,6 +115,7 @@ function getCheckedBoxes(){
 	return  checkedBoxes;
 }
 
+//function to evaluate object contained in an array
 function contains(array, object) {
     var i = array.length;
     while (i--) {
@@ -123,6 +126,7 @@ function contains(array, object) {
     return false;
 }
 
+//function to toggle all the checkboxes
 function toggle(source) {
   checkboxes = document.getElementsByName('routes');
   for(var i=0, n=checkboxes.length;i<n;i++) {
@@ -130,6 +134,7 @@ function toggle(source) {
   }
 }
 
+//asyncronous callback loads the map
 function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
